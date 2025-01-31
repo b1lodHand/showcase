@@ -1,5 +1,82 @@
 {
   "dependencies": {
+    "com.absence.attributes": {
+      "version": "https://www.github.com/b1lodHand/absent-attributes.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "0ae7e62f51adf1d9442561133fa7262136ebe22f"
+    },
+    "com.absence.consolesystem": {
+      "version": "https://www.github.com/b1lodHand/absent-console.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "69306fd208ae76776aab9071e7a605ca2cfbcaf1"
+    },
+    "com.absence.editor": {
+      "version": "https://www.github.com/b1lodHand/absent-editor.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "59ff4466daf17b5c6c557a774eb991a66b1aabc7"
+    },
+    "com.absence.memory": {
+      "version": "https://www.github.com/b1lodHand/absent-memories.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9c05b06de44cf0c4957816da259340364c32aac6"
+    },
+    "com.absence.personsystem": {
+      "version": "https://www.github.com/b1lodHand/absent-people.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d106f2e8bf19d796434fea3d7f2774d83e772bcf"
+    },
+    "com.absence.savesystem": {
+      "version": "https://www.github.com/b1lodHand/absent-saves.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b20273c9ee29a3e5bce80e19362fe1725020125d"
+    },
+    "com.absence.soundsystem": {
+      "version": "https://www.github.com/b1lodHand/absent-sounds.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "bb064abc04a574e3d23c91f2c65dd5460f479ef6"
+    },
+    "com.absence.timersystem": {
+      "version": "https://www.github.com/b1lodHand/absent-timers.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "0d57086ca887b40a86b5e650eae49155ec597e40"
+    },
+    "com.absence.utilities": {
+      "version": "https://www.github.com/b1lodHand/absent-utilities.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3b9d01732c0df6db81b9639657208dab7e254b63"
+    },
+    "com.absence.variablesystem": {
+      "version": "https://www.github.com/b1lodHand/absent-variables.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5a6d080a75d137aac92c081850890c957d6af75d"
+    },
+    "com.absence.zonesystem": {
+      "version": "https://www.github.com/b1lodHand/absent-zones.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "43249f9b07be4e3eafe3c8e294c12819e323ebdd"
+    },
     "com.autodesk.fbx": {
       "version": "4.2.1",
       "depth": 2,
