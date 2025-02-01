@@ -1,0 +1,4 @@
+{
+    "displayName": "Zone Colourizer",
+    "description": "This sample contains a static class that randomizes the color of every new zone created by the menu items."
+}
