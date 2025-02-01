@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 95703b29f49b899499233ea7308bb800, type: 3}
-  BlockCount: 128
+  BlockCount: 1024
 --- !u!1001 &2116871286
 PrefabInstance:
   m_ObjectHideFlags: 0
