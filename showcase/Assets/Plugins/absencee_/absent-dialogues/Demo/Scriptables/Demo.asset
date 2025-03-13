@@ -135,12 +135,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede7782fb7d6b964c9edf58f749ed240, type: 3}
   m_Name: Demo
   m_EditorClassIdentifier: 
-  Entry: {fileID: -3454342994817185810}
+  Entry: {fileID: 7982783006616395786}
   AllNodes:
-  - {fileID: -3454342994817185810}
   - {fileID: -290567175305490583}
   - {fileID: -7509035478664268215}
+  - {fileID: 7982783006616395786}
   m_people: []
   m_genericOptions: []
   Blackboard:
     Bank: {fileID: -3748157945484368094}
+--- !u!114 &5746262866900333438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: EntryNode
+  m_EditorClassIdentifier: Assembly-CSharp-firstpass:com.absence.dialoguesystem.internals:EntryNode
+  Guid: EntryNode
+  Position: {x: 8.000016, y: 14.99998}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -3748157945484368094}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions: []
+  Next: {fileID: 0}
+--- !u!114 &7982783006616395786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501d7a5ca1d0a344a90ce0af4756c6b7, type: 3}
+  m_Name: EntryNode
+  m_EditorClassIdentifier: 
+  Guid: EntryNode
+  Position: {x: 0, y: 0}
+  CustomData: {fileID: 0}
+  Blackboard:
+    Bank: {fileID: -3748157945484368094}
+  State: 0
+  PersonIndex: 0
+  m_genericOptions: []
+  Next: {fileID: -290567175305490583}
