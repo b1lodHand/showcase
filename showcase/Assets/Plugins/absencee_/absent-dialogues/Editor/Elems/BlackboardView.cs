@@ -1,0 +1,118 @@
+using com.absence.dialoguesystem.internals;
+using com.absence.variablesystem.banksystembase;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+namespace com.absence.dialoguesystem.editor.internals
+{
+    /// <summary>
+    /// A visual element subtype which is responsible for displaying a <see cref="Blackboard"/>.
+    /// </summary>
+    [HelpURL("https://b1lodhand.github.io/absent-dialogues/api/com.absence.dialoguesystem.editor.BlackboardView.html")]
+    public class BlackboardView : VisualElement
+    {
+        public new class UxmlFactory : UxmlFactory<BlackboardView, VisualElement.UxmlTraits> { }
+        public BlackboardView()
+        {
+
+        }
+
+        Vector2 m_blackboardViewScrollPos;
+        Editor m_blackboardBankEditor;
+
+        internal void Initialize(SerializedObject dialogue)
+        {
+            Clear();
+
+            if (dialogue == null) return;
+
+            IMGUIContainer container = new IMGUIContainer(() =>
+            {
+                DrawGUI(dialogue);
+            });
+
+            Add(container);
+        }
+
+        void DrawGUI(SerializedObject dialogue)
+        {
+            if (dialogue == null)
+            {
+                Debug.LogWarning("Associated dialogue graph is somehow deleted.");
+                return;
+            }
+
+            if (dialogue.targetObject == null)
+                return;
+
+            if (Application.isPlaying) GUI.enabled = false;
+
+            dialogue.Update();
+            SerializedProperty blackboardProperty = dialogue.FindProperty("Blackboard");
+            if (blackboardProperty == null) return;
+
+            EditorGUILayout.PropertyField(blackboardProperty);
+
+            SerializedProperty bankProp = blackboardProperty.FindPropertyRelative("Bank");
+
+            VariableBank bank = bankProp.objectReferenceValue as VariableBank;
+
+            if (bank == null)
+            {
+                EditorGUILayout.ObjectField(bankProp);
+                EditorGUILayout.HelpBox("There is no bank to edit here. Pick one to continue.", MessageType.Warning);
+                return;
+            }
+
+            SerializedObject bankSO = new SerializedObject(bank);
+            bankSO.Update();
+
+            SerializedProperty ints = bankSO.FindProperty("m_ints");
+            SerializedProperty floats = bankSO.FindProperty("m_floats");
+            SerializedProperty strings = bankSO.FindProperty("m_strings");
+            SerializedProperty booleans = bankSO.FindProperty("m_booleans");
+
+            m_blackboardViewScrollPos = EditorGUILayout.BeginScrollView(m_blackboardViewScrollPos);
+
+            EditorGUILayout.PropertyField(ints);
+            EditorGUILayout.PropertyField(floats);
+            EditorGUILayout.PropertyField(strings);
+            EditorGUILayout.PropertyField(booleans);
+
+            EditorGUILayout.EndScrollView();
+
+            bankSO.ApplyModifiedProperties();
+            dialogue.ApplyModifiedProperties();
+
+            //SerializedObject bankSO = new SerializedObject(bank);
+
+            //if (bank == null) return;
+
+            ////Undo.RecordObject(bank, "Blackboard Bank");
+
+            //m_blackboardViewScrollPos = EditorGUILayout.BeginScrollView(m_blackboardViewScrollPos);
+
+            //if (bank == null) return;
+
+            //try
+            //{
+            //    if (m_blackboardBankEditor == null) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
+            //    else if (!m_blackboardBankEditor.serializedObject.targetObject.Equals(bank)) Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
+            //    else m_blackboardBankEditor.OnInspectorGUI();
+            //}
+
+            //catch
+            //{
+            //    Editor.CreateCachedEditor(bank, null, ref m_blackboardBankEditor);
+            //}
+
+            //EditorGUILayout.EndScrollView();
+
+            //bankSO.ApplyModifiedProperties();
+            //dialogue.ApplyModifiedProperties();
+
+            //if (Application.isPlaying) GUI.enabled = true;
+        }
+    }
+}

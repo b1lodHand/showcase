@@ -1,0 +1,77 @@
+GridBackground {
+    --grid-background-color: rgb(40, 40, 40);
+    --line-color: rgba(0, 0, 0, 0.05);
+    --thick-line-color: rgba(0, 0, 0, 0.5);
+    --spacing: 15;
+}
+
+Edge {
+    --selected-edge-color: rgb(0, 0, 0);
+}
+
+#mini-map {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.18);
+    padding-top: 2px;
+}
+
+#mini-map .unity-label {
+    display: none;
+}
+
+#toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    align-self: stretch;
+}
+
+.panel-label {
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 1px;
+    border-left-width: 0;
+    border-bottom-color: rgba(0, 0, 0, 0.17);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.toolbar-button {
+    width: 39px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.toolbar-toolbar-button {
+    -unity-text-align: middle-left;
+}
+
+.toolbar-right-panel {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-self: stretch;
+}
+
+.toolbar-left-panel {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-self: stretch;
+}
+
+DialogueGraphView {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}

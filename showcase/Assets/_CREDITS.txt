@@ -1,0 +1,2 @@
+https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity
+https://github.com/awaescher/OllamaSharp?tab=readme-ov-file

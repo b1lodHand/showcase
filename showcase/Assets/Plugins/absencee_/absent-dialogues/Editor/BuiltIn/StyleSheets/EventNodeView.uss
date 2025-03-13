@@ -1,0 +1,22 @@
+#node-icon {
+    transition-property: -unity-background-image-tint-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out-circ;
+    background-image: resource('node-icon-action');
+}
+
+#title {
+    padding-right: 6px;
+}
+
+.mapped #node-icon {
+    /* -unity-background-image-tint-color: rgb(63, 166, 171); */
+}
+
+.mapped #node-icon:hover {
+    /* -unity-background-image-tint-color: rgb(91, 190, 194); */
+}
+
+.mapped #title {
+    -unity-font-style: bold;
+}

@@ -11,6 +11,7 @@
     "com.absence.utilities": "https://www.github.com/b1lodHand/absent-utilities.git",
     "com.absence.variablesystem": "https://www.github.com/b1lodHand/absent-variables.git",
     "com.absence.zonesystem": "https://www.github.com/b1lodHand/absent-zones.git",
+    "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
     "com.unity.2d.aseprite": "1.1.8",
     "com.unity.2d.psdimporter": "8.0.5",
     "com.unity.collab-proxy": "2.6.0",

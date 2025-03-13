@@ -1,0 +1,23 @@
+:root {
+    width: 200px;
+    height: 60px;
+}
+
+#node-icon {
+    background-image: none;
+    width: 0;
+    height: 0;
+}
+
+#speech {
+    display: flex;
+    flex-grow: 1;
+    height: auto;
+    min-height: auto;
+}
+
+#output {
+    align-self: flex-end;
+    margin-left: 0;
+    margin-bottom: 4px;
+}

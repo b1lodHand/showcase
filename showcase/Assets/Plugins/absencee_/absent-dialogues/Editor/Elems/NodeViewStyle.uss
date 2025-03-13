@@ -1,0 +1,204 @@
+:root {
+    --decisionSpeechNodeWidth: 350px;
+    --optionPortWidth: 34px;
+}
+
+#selection-border {
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#node-border {
+    background-color: rgb(56, 56, 56);
+    border-left-color: rgb(31, 31, 31);
+    border-right-color: rgb(31, 31, 31);
+    border-top-color: rgb(31, 31, 31);
+    border-bottom-color: rgb(31, 31, 31);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    flex-grow: 1;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#input {
+    align-items: flex-start;
+    justify-content: center;
+    align-self: flex-start;
+    -unity-text-align: upper-left;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#output {
+    align-items: flex-end;
+    justify-content: center;
+    align-self: flex-end;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#option {
+    display: none;
+}
+
+#divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.11);
+    visibility: visible;
+    display: flex;
+}
+
+#speech {
+    flex-grow: 1;
+    overflow: visible;
+    visibility: visible;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    -unity-text-align: upper-left;
+    white-space: normal;
+    text-overflow: clip;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    height: auto;
+    margin-top: 2px;
+    margin-right: 4px;
+    margin-bottom: 8px;
+    margin-left: 4px;
+}
+
+#speech > TextInput {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#title {
+    margin-top: 4px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    margin-left: 6px;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0);
+    white-space: normal;
+    -unity-text-align: middle-center;
+}
+
+#initial {
+    flex-grow: 1;
+    flex-direction: row;
+    padding-right: 6px;
+    padding-bottom: 1px;
+    background-color: rgba(53, 53, 53, 0);
+}
+
+#person-selector {
+    background-color: rgba(53, 53, 53, 0);
+}
+
+:hover > #selection-border {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+}
+
+:selected > #selection-border {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+}
+
+:hover:selected > #selection-border {
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+}
+
+.past #state-border {
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-left-color: rgb(185, 185, 185);
+    border-right-color: rgb(185, 185, 185);
+    border-top-color: rgb(185, 185, 185);
+    border-bottom-color: rgb(185, 185, 185);
+}
+
+.current #state-border {
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-left-color: rgb(63, 166, 171);
+    border-right-color: rgb(63, 166, 171);
+    border-top-color: rgb(63, 166, 171);
+    border-bottom-color: rgb(63, 166, 171);
+}
+
+.personField .unity-popup-field__input {
+    border-radius: 0;
+}
+
+#node-icon {
+    position: relative;
+    left: 2px;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-top: 1px;
+}
+
+#person-field {
+    display: none;
+}
+
+.personPreview {
+    width: 16px;
+    height: 16px;
+    align-self: center;
+}
+
+.personDependent #person-field {
+    display: flex;
+}
+
+#person-field {
+    background-color: rgb(53, 53, 53);
+}

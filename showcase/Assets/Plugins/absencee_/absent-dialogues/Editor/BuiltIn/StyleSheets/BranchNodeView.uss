@@ -1,0 +1,16 @@
+:root {
+    min-width: 138px;
+    min-height: 85px;
+}
+
+#node-icon {
+    background-image: resource('node-icon-condition');
+}
+
+#title {
+    padding-right: 6px;
+}
+
+#title-label {
+    white-space: nowrap;
+}
