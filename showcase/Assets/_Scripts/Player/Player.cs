@@ -3,18 +3,21 @@ using UnityEngine;
 
 namespace com.game.player
 {
-    [DefaultExecutionOrder(-1000)]
-    public class Player : Singleton<Player>
+    [DefaultExecutionOrder(-10000)]
+    public class Player : StaticInstance<Player>
     {
         [SerializeField] private PlayerComponentHub m_componentHub;
-
-        public bool IsLocal => true;
         public PlayerComponentHub Hub => m_componentHub;
+
+        public int Index => Hub.InputHandler.PlayerInput.playerIndex;
+        public bool IsLocal => true;
 
         protected override void Awake()
         {
             base.Awake();
-            if (IsLocal) Hub.Bootstrap(this);
+
+            if (IsLocal) 
+                Hub.Bootstrap(this);
         }
     }
 }

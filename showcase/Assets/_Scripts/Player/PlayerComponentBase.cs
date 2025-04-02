@@ -6,6 +6,8 @@ namespace com.game.player
     {
         protected Player m_owner;
 
+        public bool IsLocal => m_owner.IsLocal;
+
         public static void DoInitialize(Player owner, params PlayerComponentBase[] targets)
         {
             foreach (PlayerComponentBase target in targets)
