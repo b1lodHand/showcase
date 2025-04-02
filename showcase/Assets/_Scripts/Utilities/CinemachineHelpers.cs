@@ -19,7 +19,12 @@ namespace com.game.utilities.cinemachine
 
         public static OutputChannels GetOutputChannelForPlayer(int playerIndex, bool includeNonUniqueChannels)
         {
-            if (!s_uniqueChannelPairs.TryGetValue(playerIndex, out OutputChannels uniqueChannel))
+            OutputChannels uniqueChannel;
+
+            if (Game.LobbyType != GameLobbyType.SplitScreen)
+                uniqueChannel = OutputChannels.Channel01;
+
+            else if (!s_uniqueChannelPairs.TryGetValue(playerIndex, out uniqueChannel))
             {
                 Debug.LogError("Intended player index exceeds the max split-screen player index or is below zero. Returning default channel.");
                 return OutputChannels.Default;

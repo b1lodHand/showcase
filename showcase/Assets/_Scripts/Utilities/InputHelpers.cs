@@ -25,6 +25,9 @@ namespace com.game.utilities.input
 
         public static InputAction GetAction(PlayerInputHandler inputHandler, InputActionReference directReference)
         {
+            if (Game.LobbyType != GameLobbyType.SplitScreen)
+                return directReference.action;
+
             return inputHandler.InputActionAsset.FindAction(directReference.action.id);
         }
     }

@@ -31,12 +31,12 @@ namespace com.game.player
             }
 
             m_virtualCamera.Follow = context.Follow;
+            m_virtualCamera.OutputChannel =
+                CinemachineHelpers.GetOutputChannelForPlayer(context.Owner.Index, false);
 
             if (context.SplitScreen)
             {
                 m_inputProvider.PlayerIndex = context.Owner.Index;
-                m_virtualCamera.OutputChannel = 
-                    CinemachineHelpers.GetOutputChannelForPlayer(context.Owner.Index, false);
             }
 
             else
