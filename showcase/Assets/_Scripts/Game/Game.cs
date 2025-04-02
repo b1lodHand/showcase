@@ -11,7 +11,7 @@ namespace com.game
         static void Bootstrap()
         {
             Initialized = false;
-            LobbyType = GameLobbyType.Singleplayer;
+            LobbyType = GameLobbyType.SplitScreen;
         }
     }
 }

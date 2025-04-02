@@ -7,15 +7,13 @@ using com.absence.attributes;
 namespace com.game.player
 {
     [RequireComponent(typeof(PlayerInput))]
-    [RequireComponent(typeof(EventSystem))]
     [DefaultExecutionOrder(-1000)]
     public class PlayerInputHandler : PlayerComponentBase
     {
         [SerializeField, Readonly] private PlayerInput m_target;
-        [SerializeField, Readonly] private EventSystem m_eventSystem;
 
         public PlayerInput PlayerInput => m_target;
-        public EventSystem EventSystem => m_eventSystem;
+        public EventSystem EventSystem => EventSystem.current;
         public InputActionAsset InputActionAsset => m_actionAsset;
         public PlayerInputActions InputActions => m_inputActions;
 
@@ -27,13 +25,16 @@ namespace com.game.player
             m_actionAsset = m_target.actions;
             m_inputActions = new();
 
+            if (Game.LobbyType == GameLobbyType.SplitScreen)
+                SetupForSplitScreen();
+
             if (IsLocal) 
                 Apply();
         }
 
-        public void SetPlayerIndex(int value)
+        void SetupForSplitScreen()
         {
-            //m_target.uiInputModule
+            m_target.camera = m_owner.Hub.Camera.NativeCamera;
         }
 
         void Apply()
@@ -117,7 +118,6 @@ namespace com.game.player
 
         private void Reset()
         {
-            m_eventSystem = GetComponent<EventSystem>();
             m_target = GetComponent<PlayerInput>();
         }
 

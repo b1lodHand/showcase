@@ -20,6 +20,7 @@ namespace com.game.generics
 
         [SerializeField] private CheckMode m_checkMode;
         [SerializeField] private bool m_invert;
+        [SerializeField] private bool m_bypassOnAwake;
 
         [Space]
 
@@ -32,6 +33,14 @@ namespace com.game.generics
         [SerializeField] private List<GameObject> m_objectsToDestroy;
 
         private void Awake()
+        {
+            if (m_bypassOnAwake)
+                return;
+
+            Correlate();
+        }
+
+        public void Correlate()
         {
             bool result = false;
             switch (m_checkMode)
@@ -56,14 +65,14 @@ namespace com.game.generics
                     return;
             }
 
-            if (m_invert) 
+            if (m_invert)
                 result = !result;
 
             if (result)
-                Correlate();
+                Apply();
         }
 
-        void Correlate()
+        void Apply()
         {
             foreach (MonoBehaviour script in m_scriptsToDisable)
             {
