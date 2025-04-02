@@ -13,17 +13,20 @@ namespace com.game.player
         [SerializeField, Readonly] private PlayerInput m_target;
 
         public PlayerInput PlayerInput => m_target;
-        public EventSystem EventSystem => EventSystem.current;
+        public InputActionMap InputActionMap => m_actionMap;
         public InputActionAsset InputActionAsset => m_actionAsset;
-        public PlayerInputActions InputActions => m_inputActions;
+        //public PlayerInputActions InputActions => m_inputActions;
+        public EventSystem EventSystem => EventSystem.current;
 
+        InputActionMap m_actionMap;
         InputActionAsset m_actionAsset;
-        PlayerInputActions m_inputActions;
+        //PlayerInputActions m_inputActions;
 
         private void Awake()
         {
             m_actionAsset = m_target.actions;
-            m_inputActions = new();
+            m_actionMap = m_target.currentActionMap;
+            //m_inputActions = new();
 
             if (Game.LobbyType == GameLobbyType.SplitScreen)
                 SetupForSplitScreen();
@@ -121,20 +124,20 @@ namespace com.game.player
             m_target = GetComponent<PlayerInput>();
         }
 
-        private void OnEnable()
-        {
-            m_inputActions.Enable();
-        }
+        //private void OnEnable()
+        //{
+        //    m_inputActions.Enable();
+        //}
 
-        private void OnDisable()
-        {
-            m_inputActions.Disable();
-        }
+        //private void OnDisable()
+        //{
+        //    m_inputActions.Disable();
+        //}
 
-        private void OnDestroy()
-        {
-            Revert();
-            m_inputActions.Disable();
-        }
+        //private void OnDestroy()
+        //{
+        //    Revert();
+        //    m_inputActions.Disable();
+        //}
     }
 }

@@ -1,4 +1,5 @@
 using com.game.utilities.cinemachine;
+using com.game.utilities.input;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,11 +17,11 @@ namespace com.game.player
 
         [SerializeField] private CinemachineCamera m_virtualCamera;
         [SerializeField] private CinemachineInputAxisController m_inputProvider;
+        [SerializeField] private InputActionReference m_lookActionReference;
 
         public CinemachineCamera VCam => m_virtualCamera;
         public CinemachineInputAxisController InputProvider => m_inputProvider;
 
-        InputActionReference m_lookActionReference;
         public void Initialize(Context context)
         {
             if (context == null)
@@ -43,9 +44,9 @@ namespace com.game.player
                 m_inputProvider.PlayerIndex = -1;
             }
 
-            m_lookActionReference = InputActionReference.Create(context.Owner.Hub.InputHandler.InputActions.InGame.Look);
-            m_inputProvider.Controllers[0].Input.InputAction = m_lookActionReference;
-            m_inputProvider.Controllers[1].Input.InputAction = m_lookActionReference;
+            InputActionReference reference = InputActionReference.Create(InputHelpers.GetAction(context.Owner.Hub.InputHandler, m_lookActionReference));
+            m_inputProvider.Controllers[0].Input.InputAction = reference;
+            m_inputProvider.Controllers[1].Input.InputAction = reference;
         }
     }
 }

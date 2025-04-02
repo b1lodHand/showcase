@@ -10,6 +10,7 @@ namespace com.game.utilities.cinemachine
 
         static Dictionary<int, OutputChannels> s_uniqueChannelPairs = new()
         {
+            //{ -1, OutputChannels.Channel01 },
             { 0, OutputChannels.Channel01 },
             { 1, OutputChannels.Channel02 },
             { 2, OutputChannels.Channel03 },

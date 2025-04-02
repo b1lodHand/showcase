@@ -20,7 +20,7 @@ namespace com.game.player
 
         bool m_initialized;
         
-        private void Awake()
+        private void Start()
         {
             m_brain.ChannelMask = CinemachineHelpers.GetOutputChannelForPlayer(m_owner.Index, false);
 

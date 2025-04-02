@@ -13,7 +13,10 @@ namespace com.game.player
             foreach (PlayerComponentBase target in targets)
             {
                 target.m_owner = owner;
+                target.OnInitialize();
             }
         }
+
+        protected virtual void OnInitialize() { }
     }
 }
