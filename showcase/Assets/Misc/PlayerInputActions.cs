@@ -56,7 +56,7 @@ namespace com.game.input
                     ""id"": ""28ecac51-0d6a-4769-9a6a-654bf8a1abf4"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": ""StickDeadzone,NormalizeVector2"",
+                    ""processors"": ""StickDeadzone,NormalizeVector2,ScaleVector2(x=1.9,y=1.9)"",
                     ""groups"": "";Gamepad"",
                     ""action"": ""Look"",
                     ""isComposite"": false,

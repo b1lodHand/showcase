@@ -35,7 +35,7 @@ namespace com.game.player
             {
                 m_inputProvider.PlayerIndex = context.Owner.Index;
                 m_virtualCamera.OutputChannel = 
-                    CinemachineHelpers.GetOutputChannelForPlayer(context.Owner.Index, true);
+                    CinemachineHelpers.GetOutputChannelForPlayer(context.Owner.Index, false);
             }
 
             else
