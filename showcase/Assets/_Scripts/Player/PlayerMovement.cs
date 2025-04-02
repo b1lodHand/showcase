@@ -16,9 +16,7 @@ namespace com.game.player
         private void Start()
         {
             m_moveAction = InputHelpers.GetAction(m_owner.Hub.InputHandler, m_moveActionReference);
-
             m_moveAction.performed += OnMove;
-            m_moveAction.canceled += OnMove;
         }
 
         private void OnMove(InputAction.CallbackContext context)
