@@ -48,6 +48,15 @@ namespace com.game.input
             Debug.Log($"Player#{input.playerIndex} left!");
         }
 
+        [Button("Toggle Split-Screen")]
+        void ToggleSplitScreen()
+        {
+            if (!Application.isPlaying)
+                return;
+
+            m_target.splitScreen = !m_target.splitScreen;
+        }
+
         private void Reset()
         {
             m_target = GetComponent<PlayerInputManager>();

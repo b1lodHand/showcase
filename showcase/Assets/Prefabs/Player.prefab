@@ -748,6 +748,7 @@ GameObject:
   - component: {fileID: 554355906317542601}
   - component: {fileID: 8658897003154131394}
   - component: {fileID: 2247633841299458066}
+  - component: {fileID: 727742302064010997}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -783,8 +784,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 8658897003154131394}
-  m_eventSystem: {fileID: 0}
-  m_inputSystemUIInputModule: {fileID: 0}
+  m_eventSystem: {fileID: 4986777333414771920}
+  m_UIInputModule: {fileID: 8810418901807759451}
+  m_splitScreenEventSystem: {fileID: 6361002752862111041}
+  m_splitscreenUIInputModule: {fileID: 1873978533617058438}
 --- !u!114 &8658897003154131394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,11 +883,35 @@ MonoBehaviour:
   m_checkMode: 2
   m_invert: 0
   m_bypassOnAwake: 0
+  m_destroyComponentOnCorrelation: 1
+  m_destroyGameObjectOnCorrelation: 0
   m_player: {fileID: 0}
   m_scriptsToDisable: []
   m_scriptsToEnable: []
   m_objectsToDestroy:
   - {fileID: 182816181418669648}
+--- !u!114 &727742302064010997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7236746491306402833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57aaeb7d828bbdd4fade3d56fc9b5316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_checkMode: 2
+  m_invert: 1
+  m_bypassOnAwake: 0
+  m_destroyComponentOnCorrelation: 1
+  m_destroyGameObjectOnCorrelation: 0
+  m_player: {fileID: 0}
+  m_scriptsToDisable: []
+  m_scriptsToEnable: []
+  m_objectsToDestroy:
+  - {fileID: 2722996931189633437}
 --- !u!1 &8164289721990696589
 GameObject:
   m_ObjectHideFlags: 0

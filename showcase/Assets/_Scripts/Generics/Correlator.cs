@@ -21,6 +21,8 @@ namespace com.game.generics
         [SerializeField] private CheckMode m_checkMode;
         [SerializeField] private bool m_invert;
         [SerializeField] private bool m_bypassOnAwake;
+        [SerializeField, DisableIf(nameof(m_destroyGameObjectOnCorrelation))] private bool m_destroyComponentOnCorrelation;
+        [SerializeField] private bool m_destroyGameObjectOnCorrelation;
 
         [Space]
 
@@ -70,6 +72,11 @@ namespace com.game.generics
 
             if (result)
                 Apply();
+
+            if (m_destroyGameObjectOnCorrelation)
+                Destroy(gameObject);
+            else if (m_destroyComponentOnCorrelation)
+                Destroy(this);
         }
 
         void Apply()

@@ -12,13 +12,33 @@ namespace com.game.player
     {
         [SerializeField, Readonly] private PlayerInput m_target;
         [SerializeField] private EventSystem m_eventSystem;
-        [SerializeField] private InputSystemUIInputModule m_inputSystemUIInputModule;
+        [SerializeField] private InputSystemUIInputModule m_UIInputModule;
+        [SerializeField] private MultiplayerEventSystem m_splitScreenEventSystem;
+        [SerializeField] private InputSystemUIInputModule m_splitscreenUIInputModule;
 
         public PlayerInput PlayerInput => m_target;
         public InputActionMap InputActionMap => m_actionMap;
         public InputActionAsset InputActionAsset => m_actionAsset;
-        public EventSystem EventSystem => m_eventSystem;
-        public InputSystemUIInputModule UIInputModule => m_inputSystemUIInputModule;
+        public EventSystem EventSystem
+        {
+            get
+            {
+                if (Game.LobbyType == GameLobbyType.SplitScreen)
+                    return m_splitScreenEventSystem;
+
+                return m_eventSystem;
+            }
+        }
+        public InputSystemUIInputModule UIInputModule
+        {
+            get
+            {
+                if (Game.LobbyType == GameLobbyType.SplitScreen)
+                    return m_splitscreenUIInputModule;
+
+                return m_UIInputModule;
+            }
+        }
 
         //public PlayerInputActions InputActions => m_inputActions;
 
@@ -31,12 +51,14 @@ namespace com.game.player
             m_actionAsset = m_target.actions;
             m_actionMap = m_target.currentActionMap;
 
-            m_target.uiInputModule = m_inputSystemUIInputModule;
-
             //m_inputActions = new();
 
             if (Game.LobbyType == GameLobbyType.SplitScreen)
                 SetupForSplitScreen();
+            else
+            {
+                m_target.uiInputModule = m_UIInputModule;
+            }
 
             if (IsLocal) 
                 Apply();
@@ -45,6 +67,7 @@ namespace com.game.player
         void SetupForSplitScreen()
         {
             m_target.camera = m_owner.Hub.Camera.NativeCamera;
+            m_target.uiInputModule = m_splitscreenUIInputModule;
         }
 
         void Apply()
