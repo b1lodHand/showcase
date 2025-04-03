@@ -5,6 +5,7 @@ namespace com.game.player
     public abstract class PlayerComponentBase : MonoBehaviour
     {
         protected Player m_owner;
+        public Player Player => m_owner;
 
         public bool IsLocal => m_owner.IsLocal;
 
