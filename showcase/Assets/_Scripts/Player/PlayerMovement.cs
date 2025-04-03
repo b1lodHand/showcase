@@ -1,9 +1,5 @@
-using com.game.utilities.input;
-using System;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Users;
 
 namespace com.game.player
 {
@@ -15,7 +11,7 @@ namespace com.game.player
 
         private void Start()
         {
-            m_moveAction = InputHelpers.GetAction(m_owner.Hub.InputHandler, m_moveActionReference);
+            m_moveAction = Player.GetAction(m_moveActionReference);
             m_moveAction.performed += OnMove;
         }
 

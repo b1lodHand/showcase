@@ -49,9 +49,12 @@ namespace com.game.input
         }
 
         [Button("Toggle Split-Screen")]
-        void ToggleSplitScreen()
+        public void ToggleSplitScreen()
         {
             if (!Application.isPlaying)
+                return;
+
+            if (Game.LobbyType != GameLobbyType.SplitScreen)
                 return;
 
             m_target.splitScreen = !m_target.splitScreen;

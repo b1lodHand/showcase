@@ -30,5 +30,10 @@ namespace com.game.utilities.input
 
             return inputHandler.InputActionAsset.FindAction(directReference.action.id);
         }
+
+        public static InputAction GetAction(PlayerComponentBase playerComponent, InputActionReference directReference)
+        {
+            return GetAction(playerComponent.Player.Hub.InputHandler, directReference);
+        }
     }
 }

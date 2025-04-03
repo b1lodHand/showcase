@@ -26,7 +26,8 @@ namespace com.game.generics
 
         [Space]
 
-        [SerializeField, ShowIf(nameof(m_checkMode), CheckMode.Player_IsLocal)] private Player m_player;
+        [SerializeField, ShowIf(nameof(m_checkMode), CheckMode.Player_IsLocal), Required] 
+        private Player m_player;
 
         [Space]
 
@@ -48,7 +49,7 @@ namespace com.game.generics
             switch (m_checkMode)
             {
                 case CheckMode.Player_IsLocal:
-                    result = (m_player.IsLocal && !m_invert) || (m_invert && !m_player.IsLocal);
+                    result = m_player.IsLocal;
                     break;
                 case CheckMode.Game_IsSingleplayer:
                     result = Game.LobbyType == GameLobbyType.Singleplayer;
