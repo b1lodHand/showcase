@@ -1,8 +1,8 @@
-using com.game.input;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine;
 using com.absence.attributes;
+using UnityEngine.InputSystem.UI;
 
 namespace com.game.player
 {
@@ -11,12 +11,16 @@ namespace com.game.player
     public class PlayerInputHandler : PlayerComponentBase
     {
         [SerializeField, Readonly] private PlayerInput m_target;
+        [SerializeField] private EventSystem m_eventSystem;
+        [SerializeField] private InputSystemUIInputModule m_inputSystemUIInputModule;
 
         public PlayerInput PlayerInput => m_target;
         public InputActionMap InputActionMap => m_actionMap;
         public InputActionAsset InputActionAsset => m_actionAsset;
+        public EventSystem EventSystem => m_eventSystem;
+        public InputSystemUIInputModule UIInputModule => m_inputSystemUIInputModule;
+
         //public PlayerInputActions InputActions => m_inputActions;
-        public EventSystem EventSystem => EventSystem.current;
 
         InputActionMap m_actionMap;
         InputActionAsset m_actionAsset;
@@ -26,6 +30,9 @@ namespace com.game.player
         {
             m_actionAsset = m_target.actions;
             m_actionMap = m_target.currentActionMap;
+
+            m_target.uiInputModule = m_inputSystemUIInputModule;
+
             //m_inputActions = new();
 
             if (Game.LobbyType == GameLobbyType.SplitScreen)
