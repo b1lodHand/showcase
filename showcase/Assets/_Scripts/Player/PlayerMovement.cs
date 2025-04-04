@@ -1,6 +1,5 @@
 using com.absence.attributes;
-using com.game.utilities.extensiblecomponents;
-using System.Collections.Generic;
+using com.game.utilities.componentpipelines;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -65,9 +64,7 @@ namespace com.game.player
             if (Pipeline == null)
                 return defaultMoveSpeed;
 
-            //Pipeline.Enpipe();
-
-            return 0f;
+            return Pipeline.EnpipeMoveSpeed(defaultMoveSpeed);
         }
 
         protected virtual void Move(Vector2 input, Vector3 projectedInputDirection)
