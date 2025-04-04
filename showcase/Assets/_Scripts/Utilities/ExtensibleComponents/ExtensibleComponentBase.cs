@@ -11,7 +11,7 @@ namespace com.game.utilities.extensiblecomponents
 
         public List<ComponentExtensionBase<T>> Extensions => m_extensionList;
 
-        [ContextMenu("Refresh Extension List")]
+        [Button("Refresh Extension List")]
         public void Refresh()
         {
             m_extensionList = GetComponents<ComponentExtensionBase<T>>()

@@ -11,7 +11,7 @@ namespace com.game.utilities.componentpipelines
 
         public List<ComponentPipelineComponentBase<T>> Pipeline => m_pipeline;
 
-        [ContextMenu("Refresh Pipeline")]
+        [Button("Refresh Pipeline")]
         public void Refresh()
         {
             m_pipeline = GetComponents<ComponentPipelineComponentBase<T>>()
