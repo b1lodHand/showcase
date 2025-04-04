@@ -1,12 +1,12 @@
-using com.game.utilities.extensiblecomponents;
+using com.game.utilities.componentpipelines;
 
 namespace com.game.player
 {
-    public class PlayerMovementSprintExtension : ComponentExtensionBase<PlayerMovement, PlayerMovement.ExtensionContext>
+    public class PlayerMovementSprintExtension : ComponentPipelineComponentBase<PlayerMovementPipeline.PipelineContext>
     {
-        public override void ApplyLogic(PlayerMovement target, PlayerMovement.ExtensionContext context)
+        public override PlayerMovementPipeline.PipelineContext Enpipe(PlayerMovementPipeline.PipelineContext value)
         {
-            
+            return null;
         }
     }
 }

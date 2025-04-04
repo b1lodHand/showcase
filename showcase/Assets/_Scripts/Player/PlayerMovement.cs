@@ -6,19 +6,8 @@ using UnityEngine.InputSystem;
 
 namespace com.game.player
 {
-    public class PlayerMovement : PlayerComponentBase, IExtensibleComponent<PlayerMovement.ExtensionContext>
+    public class PlayerMovement : PlayerComponentBase
     {
-        public class ExtensionContext
-        {
-            public enum ContextType
-            {
-                MoveSpeed,
-            }
-
-            public ContextType Type;
-            public float MoveSpeed;
-        }
-
         public enum MovementTarget
         {
             Rigidbody,
@@ -35,12 +24,14 @@ namespace com.game.player
         [SerializeField, ShowIf(nameof(m_movementTarget), MovementTarget.CharacterController), Required]
         protected CharacterController m_characterController;
 
+        [Space]
+
         [SerializeField]
         protected float m_defaultMoveSpeed;
 
-        [Space, SerializeField] protected List<ComponentExtensionBase<ExtensionContext>> m_extensionList;
+        [SerializeField] protected PlayerMovementPipeline m_pipeline;
 
-        public List<ComponentExtensionBase<ExtensionContext>> Extensions => m_extensionList;
+        public PlayerMovementPipeline Pipeline => m_pipeline;
 
         protected InputAction m_moveAction;
         protected Vector2 m_input;
@@ -69,9 +60,14 @@ namespace com.game.player
                 Debug.Log($"[Player#{m_owner.Index}] Movement Input: ({m_input.x}, {m_input.y})");
         }
 
-        protected virtual void FetchSpeed(float defaultMoveSpeed)
+        protected virtual float GetMoveSpeed(float defaultMoveSpeed)
         {
-            
+            if (Pipeline == null)
+                return defaultMoveSpeed;
+
+            //Pipeline.Enpipe();
+
+            return 0f;
         }
 
         protected virtual void Move(Vector2 input, Vector3 projectedInputDirection)

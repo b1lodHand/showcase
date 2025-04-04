@@ -5,9 +5,9 @@ namespace com.game.utilities.componentpipelines
 {
     public abstract class ComponentPipelineComponentBase<T>  : MonoBehaviour
     {
-        [SerializeField] private uint m_order;
+        [SerializeField] private int m_order;
 
-        public uint Order => m_order;
+        public int Order => m_order;
 
         public abstract T Enpipe(T value);
     }
