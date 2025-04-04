@@ -27,7 +27,7 @@ namespace com.game.player
         private void Start()
         {
             m_sprintAction = m_target.GetActionForPlayer(m_sprintActionReference);
-            m_sprintAction.started += OnSprintPressed;
+            m_sprintAction.performed += OnSprintPressed;
             m_sprintAction.canceled += OnSprintUnpressed;
         }
 

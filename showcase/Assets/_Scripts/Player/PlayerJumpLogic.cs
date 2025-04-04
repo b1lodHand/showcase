@@ -30,7 +30,7 @@ namespace com.game.player
             m_totalJumps = GetTotalJumps();
 
             m_jumpAction = m_target.GetAction(m_jumpActionReference);
-            m_jumpAction.started += OnJumpPressed;
+            m_jumpAction.performed += OnJumpPressed;
             m_jumpAction.canceled += OnJumpUnpressed;
         }
 
@@ -39,7 +39,7 @@ namespace com.game.player
             m_wasGroundedLastFrame = m_target.Hub.Movement.WasGroundedLastFrame;
             m_isGrounded = m_target.Hub.Movement.IsGrounded;
 
-            if (m_isGrounded && !m_wasGroundedLastFrame)
+            if ((m_isGrounded && (!m_jumpPressed)) || (m_isGrounded && (!m_wasGroundedLastFrame)))
                 m_jumpCount = 0;
         }
 
