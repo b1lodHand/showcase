@@ -5,6 +5,11 @@ namespace com.game.player
 {
     public class PlayerMovement : PlayerComponentBase
     {
+        public enum ExtensionContext
+        {
+            MoveSpeed,
+        }
+
         [SerializeField] private InputActionReference m_moveActionReference;
 
         InputAction m_moveAction;
