@@ -14,7 +14,7 @@ namespace com.game.utilities.componentpipelines
 
     public abstract class ComponentPipelineComponentBase<T1, T2> : ComponentPipelineComponentBase<T2> where T1 : MonoBehaviour
     {
-        [SerializeField, Readonly] private T1 m_target;
+        [SerializeField, Readonly] protected T1 m_target;
 
         public override T2 Enpipe(T2 value)
         {
@@ -27,10 +27,18 @@ namespace com.game.utilities.componentpipelines
             FetchTarget();
         }
 
-        [ContextMenu("Find Target")]
+        [Button("Find Target")]
         void FetchTarget()
         {
             m_target = GetComponent<T1>();
+
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                UnityEditor.EditorUtility.SetDirty(this);
+                UnityEditor.AssetDatabase.SaveAssetIfDirty(this);
+            }
+#endif
         }
     }
 }

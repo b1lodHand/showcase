@@ -14,7 +14,7 @@ namespace com.game.utilities.extensiblecomponents
 
     public abstract class ComponentExtensionBase<T1, T2> : ComponentExtensionBase<T2> where T1 : MonoBehaviour
     {
-        [SerializeField, Readonly] private T1 m_target;
+        [SerializeField, Readonly] protected T1 m_target;
 
         public override void Apply(T2 context)
         {
@@ -28,10 +28,18 @@ namespace com.game.utilities.extensiblecomponents
             FetchTarget();
         }
 
-        [ContextMenu("Find Target")]
+        [Button("Find Target")]
         void FetchTarget()
         {
             m_target = GetComponent<T1>();
+
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                UnityEditor.EditorUtility.SetDirty(this);
+                UnityEditor.AssetDatabase.SaveAssetIfDirty(this);
+            }
+#endif
         }
     }
 }
