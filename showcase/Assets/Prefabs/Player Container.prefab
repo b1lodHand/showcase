@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57aaeb7d828bbdd4fade3d56fc9b5316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_executionMode: 2
   m_checkMode: 0
   m_invert: 1
-  m_bypassOnAwake: 0
   m_destroyComponentOnCorrelation: 1
   m_destroyGameObjectOnCorrelation: 0
   m_player: {fileID: 7748022026018366312}

@@ -7,7 +7,7 @@ using UnityEngine.InputSystem.UI;
 namespace com.game.player
 {
     [RequireComponent(typeof(PlayerInput))]
-    [DefaultExecutionOrder(-1000)]
+    [DefaultExecutionOrder(-100)]
     public class PlayerInputHandler : PlayerComponentBase
     {
         [SerializeField, Readonly] private PlayerInput m_target;

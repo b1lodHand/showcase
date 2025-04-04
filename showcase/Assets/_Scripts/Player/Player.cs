@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace com.game.player
 {
-    [DefaultExecutionOrder(-10000)]
+    [DefaultExecutionOrder(-101)]
     public class Player : MonoBehaviour
     {
         static Player s_instance;

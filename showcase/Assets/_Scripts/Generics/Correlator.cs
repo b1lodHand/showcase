@@ -1,14 +1,23 @@
 using com.absence.attributes;
 using com.game.player;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.game.generics
 {
-    [DefaultExecutionOrder(-100)]
+    [DefaultExecutionOrder(EXECUTION_ORDER)]
     public class Correlator : MonoBehaviour
     {
+        public const int EXECUTION_ORDER = -1001;
+
+        public enum ExecutionMode
+        {
+            [InspectorName("None (Manual)")] Manual,
+            OnEnable,
+            Awake,
+            Start,
+        }
+
         public enum CheckMode
         {
             [InspectorName("Is Local (Player)")] Player_IsLocal,
@@ -18,9 +27,9 @@ namespace com.game.generics
             [InspectorName("Is Wide Multiplayer (Game)")] Game_IsWideMultiplayer,
         }
 
+        [SerializeField] private ExecutionMode m_executionMode = ExecutionMode.Awake;
         [SerializeField] private CheckMode m_checkMode;
         [SerializeField] private bool m_invert;
-        [SerializeField] private bool m_bypassOnAwake;
         [SerializeField, DisableIf(nameof(m_destroyGameObjectOnCorrelation))] private bool m_destroyComponentOnCorrelation;
         [SerializeField] private bool m_destroyGameObjectOnCorrelation;
 
@@ -37,10 +46,23 @@ namespace com.game.generics
 
         private void Awake()
         {
-            if (m_bypassOnAwake)
+            if (m_executionMode == ExecutionMode.Awake)
+                Correlate();
+        }
+
+        private void Start()
+        {
+            if (m_executionMode == ExecutionMode.Start)
+                Correlate();
+        }
+
+        private void OnEnable()
+        {
+            if (!Application.isPlaying)
                 return;
 
-            Correlate();
+            if (m_executionMode == ExecutionMode.OnEnable)
+                Correlate();
         }
 
         public void Correlate()
