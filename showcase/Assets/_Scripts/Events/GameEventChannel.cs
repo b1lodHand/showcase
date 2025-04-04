@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace com.game.player
+namespace com.game.events
 {
-    public static class PlayerInputEventChannel
+    public static class GameEventChannel
     {
 
 

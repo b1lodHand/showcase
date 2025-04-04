@@ -18,7 +18,7 @@ namespace com.game.player
         public float EnpipeMoveSpeed(float defaultMoveSpeed)
         {
             PipelineContext context = GetMoveSpeedPipelineContext(defaultMoveSpeed);
-            return this.Enpipe(context).MoveSpeed;
+            return Enpipe(context).MoveSpeed;
         }
 
         PipelineContext GetMoveSpeedPipelineContext(float defaultMoveSpeed)

@@ -314,7 +314,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 127
+    m_Bits: 895
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -502,15 +502,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1913347612705308171, guid: 2108a7f01159a8245a96c1c695b9dd72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.831
       objectReference: {fileID: 0}
     - target: {fileID: 1913347612705308171, guid: 2108a7f01159a8245a96c1c695b9dd72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 1913347612705308171, guid: 2108a7f01159a8245a96c1c695b9dd72, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.375
       objectReference: {fileID: 0}
     - target: {fileID: 1913347612705308171, guid: 2108a7f01159a8245a96c1c695b9dd72, type: 3}
       propertyPath: m_LocalRotation.w
@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 1533032994}
   - component: {fileID: 1533032993}
   - component: {fileID: 1533032992}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
