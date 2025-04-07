@@ -9,6 +9,8 @@ namespace com.game.player
             public enum ContextType
             {
                 MoveSpeed,
+                Land,
+                LeaveGround,
             }
 
             public ContextType Type;
