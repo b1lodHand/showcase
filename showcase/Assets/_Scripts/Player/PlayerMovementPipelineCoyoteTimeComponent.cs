@@ -1,4 +1,4 @@
-using com.game.utilities.componentpipelines;
+using com.absence.utilities.componentpipelines;
 using UnityEngine;
 using static com.game.player.PlayerMovementPipeline;
 

@@ -1,4 +1,4 @@
-using com.game.utilities.componentpipelines;
+using com.absence.utilities.componentpipelines;
 
 namespace com.game.player
 {
